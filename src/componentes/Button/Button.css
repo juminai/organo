@@ -1,0 +1,15 @@
+.formulario button {
+    background-color: #6278F7;
+    border: none;
+    color: #fff;
+    border-radius: .4rem;
+    padding: 1rem 1.6rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-top: 2rem;
+    cursor: pointer;
+
+    &:hover {
+        color: #95FFD4;
+    }
+}

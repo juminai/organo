@@ -1,0 +1,15 @@
+.banner {
+    background-color: var(--accent);
+    text-align: center;
+}
+
+.banner img {
+    max-width: 100%;
+}
+
+@media screen and (max-width: 430px) {
+    .banner {
+        display: none;
+    }
+    
+}
