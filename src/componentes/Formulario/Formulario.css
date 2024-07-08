@@ -1,16 +1,18 @@
-.formulario {
-    display: flex;
+.formularios {
+    display: grid;
     justify-content: center;
-    margin: 5rem 0;
+    margin: 5rem;
+    gap: 2rem;
+    grid-template-columns: 2fr 1fr;
 }
 
-.formulario form h2 {
+.formularios form h2 {
     font-size: 2rem;
     color: #212121;
     font-weight: 400;
 }
 
-.formulario form {
+.formularios form {
     max-width: 80%;
     background-color: #F6F6F6;
     border-radius: 1.25rem;
@@ -19,11 +21,12 @@
 }
 
 @media screen and (max-width: 430px) {
-    .formulario {
+    .formularios {
         margin: 0;
+        grid-template-columns: 1fr;
     }
 
-    .formulario form {
+    .formularios form {
         border-radius: 0;
         padding: 1rem 1.5rem 3rem; 
         max-width: 100%;

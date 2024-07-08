@@ -12,7 +12,7 @@ const ListaSuspensa = (props) => {
                 {props.items.map((item) => (
                     <option key={item}>{item}</option>
                 ))}
-                <option value=''></option>
+                <option value=''>Selecione</option>
             </select>
         </div>
     );      

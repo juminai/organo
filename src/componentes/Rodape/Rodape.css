@@ -7,10 +7,15 @@
 }
 
 .redes ul {
+    all: unset;
     list-style-type: none;
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+.redes ul li img {
+    width: 70%;
 }
 
 .rodape .logo img {
@@ -18,18 +23,28 @@
 }
 
 .rodape .logo {
-    margin-left: 4rem;
+    text-align: center;
+    margin-left: 5rem;
 }
 
 .rodape .p {
-    color: var(--white);
     font-weight: 500;
-    font-size: 1.4rem;
+    color: var(--white);
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 @media screen and (max-width: 430px) {
     .rodape {
         flex-direction: column;
-        gap: 1rem;
+        padding: 2rem;
+    }
+
+    .rodape .logo {
+        margin: 2rem 0;
+    }
+
+    .rodape .p {
+        font-size: 1rem;
     }
 }

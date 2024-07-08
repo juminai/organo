@@ -9,6 +9,8 @@ const Formulario = (props) => {
     const [cargo, setCargo] = useState('');
     const [imagem, setImagem] = useState('');
     const [time, setTime] = useState('');
+    const [nomeTime, setNomeTime] = useState('');
+    const [corTime, setCorTime] = useState('');
 
     const onSave = (e) => {
         e.preventDefault();
@@ -19,17 +21,27 @@ const Formulario = (props) => {
             time,
         });
 
-        setNome('')
-        setCargo('')
-        setImagem('')
-        setTime('')
-        
+        setNome('');
+        setCargo('');
+        setImagem('');
+        setTime('');
+    };
+
+    const onSaveTime = (e) => {
+        e.preventDefault();
+        props.addNovoTime({
+            nome: nomeTime,
+            cor: corTime,
+        });
+
+        setNomeTime('');
+        setCorTime('');
     };
 
     return (
-        <section className="formulario">
-            <form onSubmit={onSave}>
-                <h2>Preencha os dados para criar o card do colaborador.</h2>
+        <section className="formularios">
+            <form onSubmit={onSave} className="formulario">
+                <h2>Preencha os dados para criar o card do colaborador</h2>
                 <CampoTexto
                     valor={nome}
                     onAlterado={(valor) => setNome(valor)}
@@ -57,6 +69,24 @@ const Formulario = (props) => {
                     items={props.times}
                 />
                 <Button>Criar card</Button>
+            </form>
+            <form onSubmit={onSaveTime} className="formulario">
+                <h2>Preencha os dados para criar o novo time</h2>
+                <CampoTexto
+                    valor={nomeTime}
+                    onAlterado={(valor) => setNomeTime(valor)}
+                    obrigatorio
+                    label="Nome"
+                    placeholder="Digite o nome do novo time"
+                />
+                <CampoTexto
+                    valor={corTime}
+                    onAlterado={(valor) => setCorTime(valor)}
+                    obrigatorio
+                    label="Cor"
+                    placeholder="Digite a cor do novo time"
+                />
+                <Button>Criar Time</Button>
             </form>
         </section>
     );
