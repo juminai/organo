@@ -22,6 +22,7 @@
 .campo-texto input[type='color'] {
     width: 15%;
     padding: initial;
+    border-radius: 0;
 }
 
 .cor-selecionada {

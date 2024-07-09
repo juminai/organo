@@ -1,12 +1,23 @@
 import './Colaborador.css';
 import { IoMdCloseCircle } from 'react-icons/io';
 import { FaStar, FaRegStar } from 'react-icons/fa6';
+import { useEffect, useState } from 'react';
 
 const Colaborador = ({ onDelete, cor, colaborador, onFav }) => {
     const favProps = {
         size: 25,
         color: '#FFCC00',
     };
+
+    const [randomImagem, setRandomImage] = useState('');
+
+    useEffect(() => {
+        fetch('https://randomuser.me/api/')
+            .then((res) => res.json())
+            .then((data) => {
+                setRandomImage(data.results[0].picture.medium);
+            });
+    }, [colaborador.imagem]);
 
     return (
         <div className="colaborador">
@@ -21,7 +32,7 @@ const Colaborador = ({ onDelete, cor, colaborador, onFav }) => {
                     src={
                         colaborador.imagem !== ''
                             ? colaborador.imagem
-                            : '/favicon.ico'
+                            : randomImagem
                     }
                     alt={colaborador.nome}
                 />

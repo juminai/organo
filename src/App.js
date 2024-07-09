@@ -110,8 +110,8 @@ function App() {
                         </div>
                     </div>
 
-                    {showTimes &&
-                        times.map((time) => (
+                    <div style={{ display: showTimes ? 'block' : 'none' }}>
+                        {times.map((time) => (
                             <Time
                                 key={time.nome}
                                 time={time}
@@ -124,6 +124,7 @@ function App() {
                                 changeColor={changeTimeColor}
                             />
                         ))}
+                    </div>
                 </section>
             )}
 

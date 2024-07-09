@@ -53,3 +53,14 @@
 .add-button img {
     width: 75%;
 }
+
+@media screen and (max-width: 430px) {
+    .add-button  {
+        right: 0;
+        top: 1rem;
+    }
+
+    .add-button img {
+        width: 55%;
+    }
+}
