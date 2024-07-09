@@ -1,9 +1,9 @@
 .formularios {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin: 5rem;
     gap: 2rem;
-    grid-template-columns: 2fr 1fr;
 }
 
 .formularios form h2 {
@@ -16,7 +16,7 @@
     max-width: 80%;
     background-color: #F6F6F6;
     border-radius: 1.25rem;
-    padding: 1rem 4rem; 
+    padding: 1rem 4rem;
     box-shadow: 0px 4px 4px 0px #00000040;
 }
 

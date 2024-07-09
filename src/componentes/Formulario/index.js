@@ -10,7 +10,7 @@ const Formulario = (props) => {
     const [imagem, setImagem] = useState('');
     const [time, setTime] = useState('');
     const [nomeTime, setNomeTime] = useState('');
-    const [corTime, setCorTime] = useState('');
+    const [corTime, setCorTime] = useState('#000000');
 
     const onSave = (e) => {
         e.preventDefault();
@@ -84,8 +84,9 @@ const Formulario = (props) => {
                     onAlterado={(valor) => setCorTime(valor)}
                     obrigatorio
                     label="Cor"
-                    placeholder="Digite a cor do novo time"
+                    type='color'
                 />
+                <p className='cor-selecionada'>{corTime}</p>
                 <Button>Criar Time</Button>
             </form>
         </section>

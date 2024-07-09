@@ -47,7 +47,10 @@ function App() {
     const [colaboradores, setColaboradores] = useState([]);
 
     const adicionarColaborador = (colaborador) => {
-        setColaboradores([...colaboradores, {...colaborador, id: uuidv4()}]);
+        setColaboradores([
+            ...colaboradores,
+            { ...colaborador, id: uuidv4(), fav: false },
+        ]);
     };
 
     function deletarColaborador(idColaborador) {
@@ -73,6 +76,17 @@ function App() {
         setTimes([...times, { ...novoTime, id: uuidv4() }]);
     }
 
+    function favoritar(idColaborador) {
+        setColaboradores(
+            colaboradores.map((colaborador) => {
+                if (colaborador.id === idColaborador) {
+                    colaborador.fav = !colaborador.fav
+                }
+                return colaborador
+            })
+        )
+    }
+
     return (
         <div className="App">
             <Banner />
@@ -92,6 +106,7 @@ function App() {
                                 (colaborador) => colaborador.time === time.nome
                             )}
                             onDelete={deletarColaborador}
+                            onFav={favoritar}
                             changeColor={changeTimeColor}
                         />
                     ))}

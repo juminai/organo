@@ -18,3 +18,12 @@
     padding: 1.5rem;
     box-sizing: border-box;
 }
+
+.campo-texto input[type='color'] {
+    width: 15%;
+    padding: initial;
+}
+
+.cor-selecionada {
+    margin-top: -1rem;
+}

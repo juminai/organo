@@ -2,7 +2,7 @@ import Colaborador from '../Colaborador';
 import hexToRgba from 'hex-to-rgba';
 import './Time.css';
 
-const Time = ({ time, colaboradores, onDelete, changeColor }) => {
+const Time = ({ time, colaboradores, onDelete, changeColor, onFav }) => {
 
     return (
         colaboradores.length > 0 && (
@@ -26,6 +26,7 @@ const Time = ({ time, colaboradores, onDelete, changeColor }) => {
                                 colaborador={colaborador}
                                 cor={time.cor}
                                 onDelete={onDelete}
+                                onFav={onFav}
                             />
                         );
                     })}
