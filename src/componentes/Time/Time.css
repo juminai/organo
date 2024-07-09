@@ -31,3 +31,25 @@
     color: var(--accent);
     font-weight: light;
 }
+
+.titulo h1{
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: .3rem solid var(--accent);
+    display: inline-block;
+}
+
+.titulo {
+    position: relative;
+}
+
+.add-button {
+    position: absolute;
+    right: 3rem;
+    top: .5rem;
+    cursor: pointer;
+}
+
+.add-button img {
+    width: 75%;
+}

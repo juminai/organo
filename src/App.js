@@ -80,12 +80,18 @@ function App() {
         setColaboradores(
             colaboradores.map((colaborador) => {
                 if (colaborador.id === idColaborador) {
-                    colaborador.fav = !colaborador.fav
+                    colaborador.fav = !colaborador.fav;
                 }
-                return colaborador
+                return colaborador;
             })
-        )
+        );
     }
+
+    const [showTimes, setShowTimes] = useState(true);
+
+    const toggleTimes = () => {
+        setShowTimes(!showTimes);
+    };
 
     return (
         <div className="App">
@@ -97,19 +103,27 @@ function App() {
             />
             {colaboradores.length > 0 && (
                 <section className="times">
-                    <h1>Minha Organização</h1>
-                    {times.map((time) => (
-                        <Time
-                            key={time.nome}
-                            time={time}
-                            colaboradores={colaboradores.filter(
-                                (colaborador) => colaborador.time === time.nome
-                            )}
-                            onDelete={deletarColaborador}
-                            onFav={favoritar}
-                            changeColor={changeTimeColor}
-                        />
-                    ))}
+                    <div className="titulo">
+                        <h1>Minha Organização</h1>
+                        <div className="add-button" onClick={toggleTimes}>
+                            <img src="/imagens/button.svg" alt="button-add" />
+                        </div>
+                    </div>
+
+                    {showTimes &&
+                        times.map((time) => (
+                            <Time
+                                key={time.nome}
+                                time={time}
+                                colaboradores={colaboradores.filter(
+                                    (colaborador) =>
+                                        colaborador.time === time.nome
+                                )}
+                                onDelete={deletarColaborador}
+                                onFav={favoritar}
+                                changeColor={changeTimeColor}
+                            />
+                        ))}
                 </section>
             )}
 
